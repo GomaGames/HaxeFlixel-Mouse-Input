@@ -2,20 +2,15 @@ package;
 
 import flixel.FlxG;
 import flixel.FlxState;
-import flixel.FlxSprite;
-import flixel.util.FlxColor;
-using flixel.util.FlxSpriteUtil;
-import flixel.util.FlxMath;
+import sprites.Square;
 
 /**
  * A FlxState which can be used for the actual gameplay.
  */
 class PlayState extends FlxState
 {
-  private static inline var rectangle_size : Float = 150;
-  private static inline var rectangle_corner_radius : Float = 10;
-  private var rectangle_1 : FlxSprite;
-  private var rectangle_2 : FlxSprite;
+  private var rectangle_1 : Square;
+  private var rectangle_2 : Square;
 
   /**
    * Function that is called up when to state is created to set it up.
@@ -23,15 +18,10 @@ class PlayState extends FlxState
   override public function create():Void
   {
     // create the two shapes to be added to this state
-    // use chaining to setup the shape graphics
-    rectangle_1 = new FlxSprite()
-      .makeGraphic( rectangle_size, rectangle_size, FlxColor.TRANSPARENT )
-      .drawRoundRect( 0, 0, rectangle_size, rectangle_size, rectangle_corner_radius, rectangle_corner_radius, FlxColor.FOREST_GREEN, null, null, null);
+    rectangle_1 = new Square();
+    rectangle_2 = new Square();
 
-    rectangle_2 = new FlxSprite()
-      .makeGraphic( rectangle_size, rectangle_size, FlxColor.TRANSPARENT )
-      .drawRoundRect( 0, 0, rectangle_size, rectangle_size, rectangle_corner_radius, rectangle_corner_radius, FlxColor.FOREST_GREEN, null, null, null);
-
+    // set shape positions
     rectangle_1.setPosition( ( FlxG.width - rectangle_1.width ) * .3, ( FlxG.height - rectangle_1.height ) / 2);
     rectangle_2.setPosition( ( FlxG.width - rectangle_2.width ) * .7, ( FlxG.height - rectangle_2.height ) / 2);
 
