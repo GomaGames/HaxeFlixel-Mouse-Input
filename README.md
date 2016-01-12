@@ -14,6 +14,8 @@ See all of our [GameDev resources](http://gomagames.github.io/)
 
 ![Mouse events](/doc/inputevents.gif)
 
+[Play the demo in your browser](http://gomagames.github.io/HaxeFlixel-Mouse-Input/)
+
 ----
 
 ## To run this proof of concept
